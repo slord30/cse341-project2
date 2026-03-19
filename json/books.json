@@ -1,0 +1,92 @@
+[
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Classic Fiction",
+    "publicationYear": 1925,
+    "isbn": "978-0743273565",
+    "description": "A story of wealth, love, and the American Dream in the 1920s.",
+    "isAvailable": true
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "Dystopian",
+    "publicationYear": 1949,
+    "isbn": "978-0451524935",
+    "description": "A chilling prophecy about the future of a totalitarian state.",
+    "isAvailable": true
+  },
+  {
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "publicationYear": 1937,
+    "isbn": "978-0547928227",
+    "description": "Bilbo Baggins leaves his quiet home for an epic quest to reclaim treasure.",
+    "isAvailable": false
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": "Classic Fiction",
+    "publicationYear": 1960,
+    "isbn": "978-0061120084",
+    "description": "The story of young Scout Finch and her father's fight against racial injustice.",
+    "isAvailable": true
+  },
+  {
+    "title": "Project Hail Mary",
+    "author": "Andy Weir",
+    "genre": "Science Fiction",
+    "publicationYear": 2021,
+    "isbn": "978-0593135204",
+    "description": "A lone astronaut must save the Earth from an extinction-level threat.",
+    "isAvailable": true
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "genre": "Young Adult",
+    "publicationYear": 1951,
+    "isbn": "978-0316769488",
+    "description": "Holden Caulfield navigates the complexities of teenage angst and alienation.",
+    "isAvailable": true
+  },
+  {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "genre": "Self-Help",
+    "publicationYear": 2018,
+    "isbn": "978-0735211292",
+    "description": "An easy and proven way to build good habits and break bad ones.",
+    "isAvailable": true
+  },
+  {
+    "title": "Educated",
+    "author": "Tara Westover",
+    "genre": "Memoir",
+    "publicationYear": 2018,
+    "isbn": "978-0399590504",
+    "description": "A young woman leaves her survivalist family to pursue academic success.",
+    "isAvailable": false
+  },
+  {
+    "title": "The Seven Husbands of Evelyn Hugo",
+    "author": "Taylor Jenkins Reid",
+    "genre": "Historical Fiction",
+    "publicationYear": 2017,
+    "isbn": "978-1501161933",
+    "description": "An aging Hollywood icon recounts her scandalous and glamorous life.",
+    "isAvailable": true
+  },
+  {
+    "title": "The Silent Patient",
+    "author": "Alex Michaelides",
+    "genre": "Psychological Thriller",
+    "publicationYear": 2019,
+    "isbn": "978-1250301697",
+    "description": "A woman shoots her husband and never speaks another word.",
+    "isAvailable": true
+  }
+]

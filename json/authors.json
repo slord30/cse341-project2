@@ -1,0 +1,52 @@
+[
+  {
+    "firstName": "F. Scott",
+    "lastName": "Fitzgerald",
+    "birthday": "1896-09-24"
+  },
+  {
+    "firstName": "George",
+    "lastName": "Orwell",
+    "birthday": "1903-06-25"
+  },
+  {
+    "firstName": "J.R.R.",
+    "lastName": "Tolkien",
+    "birthday": "1892-01-03"
+  },
+  {
+    "firstName": "Harper",
+    "lastName": "Lee",
+    "birthday": "1926-04-28"
+  },
+  {
+    "firstName": "Andy",
+    "lastName": "Weir",
+    "birthday": "1972-06-16"
+  },
+  {
+    "firstName": "J.D.",
+    "lastName": "Salinger",
+    "birthday": "1919-01-01"
+  },
+  {
+    "firstName": "James",
+    "lastName": "Clear",
+    "birthday": "1986-01-01"
+  },
+  {
+    "firstName": "Tara",
+    "lastName": "Westover",
+    "birthday": "1986-09-27"
+  },
+  {
+    "firstName": "Taylor",
+    "lastName": "Jenkins Reid",
+    "birthday": "1983-12-20"
+  },
+  {
+    "firstName": "Alex",
+    "lastName": "Michaelides",
+    "birthday": "1977-01-01"
+  }
+]
