@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     res.send("Hello World! Welcome to the Library API.")
 });
 
-router.use('/books', books);
-router.use('/authors', author)
+router.use('/books', books /* #swagger.tags = ['Books'] */);
+router.use('/authors', author /* #swagger.tags = ['Author'] */);
 
 module.exports = router;
