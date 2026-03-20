@@ -29,6 +29,15 @@ const getSingle = async (req, res) => {
 
 const createAuthor = async (req, res) => {
     //#swagger.tags = ['Author']  
+    /*  #swagger.parameters['obj'] = {
+            in: 'body',
+            description: 'Author information',
+            schema: {
+                $firstName: 'J.R.R.',
+                $lastName: 'Tolkien',
+                $birthday: '1892-01-03'
+            }
+    } */ 
     try {
         const author = new Author({
             firstName: req.body.firstName,
@@ -48,11 +57,7 @@ const updateAuthor = async (req, res) => {
     /*  #swagger.parameters['obj'] = {
             in: 'body',
             description: 'Author information',
-            schema: {
-                firstName: 'J.R.R.',
-                lastName: 'Tolkien',
-                birthday: '1892-01-03'
-            }
+            schema: { $ref: '#/definitions/Author' }
     } */ 
     try {
         const authorId = (req.params.id);

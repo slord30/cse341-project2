@@ -24,12 +24,64 @@
     "/": {
       "get": {
         "tags": [
-          "Hello World"
+          "Author"
         ],
         "description": "",
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Author"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "Author information",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "J.R.R."
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Tolkien"
+                },
+                "birthday": {
+                  "type": "string",
+                  "example": "1892-01-03"
+                }
+              },
+              "required": [
+                "firstName",
+                "lastName",
+                "birthday"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "412": {
+            "description": "Precondition Failed"
           }
         }
       }
@@ -152,33 +204,11 @@
             "type": "string"
           },
           {
-            "name": "body",
+            "name": "obj",
             "in": "body",
+            "description": "Book information",
             "schema": {
-              "type": "object",
-              "properties": {
-                "title": {
-                  "example": "any"
-                },
-                "author": {
-                  "example": "any"
-                },
-                "genre": {
-                  "example": "any"
-                },
-                "publicationYear": {
-                  "example": "any"
-                },
-                "isbn": {
-                  "example": "any"
-                },
-                "description": {
-                  "example": "any"
-                },
-                "isAvailable": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Book"
             }
           }
         ],
@@ -248,21 +278,30 @@
         "description": "",
         "parameters": [
           {
-            "name": "body",
+            "name": "obj",
             "in": "body",
+            "description": "Author information",
             "schema": {
               "type": "object",
               "properties": {
                 "firstName": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "J.R.R."
                 },
                 "lastName": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "Tolkien"
                 },
                 "birthday": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "1892-01-03"
                 }
-              }
+              },
+              "required": [
+                "firstName",
+                "lastName",
+                "birthday"
+              ]
             }
           }
         ],
@@ -325,21 +364,98 @@
             "in": "body",
             "description": "Author information",
             "schema": {
-              "type": "object",
-              "properties": {
-                "firstName": {
-                  "type": "string",
-                  "example": "J.R.R."
-                },
-                "lastName": {
-                  "type": "string",
-                  "example": "Tolkien"
-                },
-                "birthday": {
-                  "type": "string",
-                  "example": "1892-01-03"
-                }
-              }
+              "$ref": "#/definitions/Author"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Author"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/{id}": {
+      "get": {
+        "tags": [
+          "Author"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Author"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "Author information",
+            "schema": {
+              "$ref": "#/definitions/Author"
             }
           }
         ],

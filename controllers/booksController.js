@@ -60,7 +60,12 @@ const createBook = async (req, res) => {
 };
 
 const updateBook = async (req, res) => {
-    //#swagger.tags = ['Books']  
+    //#swagger.tags = ['Books']
+    /*  #swagger.parameters['obj'] = {
+            in: 'body',
+            description: 'Book information',
+            schema: { $ref: '#/definitions/Book' }
+    } */ 
     try {
         const bookId = (req.params.id);
         const bookData = {
