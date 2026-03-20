@@ -308,5 +308,57 @@
         }
       }
     }
+  },
+  "definitions": {
+    "Book": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "example": "The Hobbit"
+        },
+        "author": {
+          "type": "string",
+          "example": "J.R.R. Tolkien"
+        },
+        "genre": {
+          "type": "string",
+          "example": "Fantasy"
+        },
+        "publicationYear": {
+          "type": "number",
+          "example": 1937
+        },
+        "isbn": {
+          "type": "string",
+          "example": "978-0547928227"
+        },
+        "description": {
+          "type": "string",
+          "example": "A great adventure."
+        },
+        "isAvailable": {
+          "type": "boolean",
+          "example": true
+        }
+      }
+    },
+    "Author": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "example": "J.R.R."
+        },
+        "lastName": {
+          "type": "string",
+          "example": "Tolkien"
+        },
+        "birthday": {
+          "type": "string",
+          "example": "1892-01-03"
+        }
+      }
+    }
   }
 }
