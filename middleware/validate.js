@@ -15,7 +15,9 @@ const bookValidationRules = () => {
 const authorValidationRules = () => {
     return [
         body("firstName").notEmpty().withMessage("First name is required.").trim().escape(),
-        body("lastName").notEmpty().withMessage("Last name is required.").trim().escape()
+        body("lastName").notEmpty().withMessage("Last name is required.").trim().escape(),
+        body("birthday").optional().isISO8601().withMessage("Birthday must be a valid date (YYYY-MM-DD).")
+
     ]
 }
 

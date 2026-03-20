@@ -13,27 +13,7 @@ router.get('/', (req, res) => {
     res.send("Hello World! Welcome to the Library API.")
 });
 
-router.use('/books', books 
-    /* #swagger.tags = ['Books'] 
-       #swagger.definitions['Book'] = {
-            title: 'The Great Gatsby',
-            author: 'F. Scott Fitzgerald',
-            genre: 'Classic Fiction',
-            publicationYear: 1925,
-            isbn: '978-0743273565',
-            description: 'A story of wealth and love.',
-            isAvailable: true
-       }
-    */
-);
-router.use('/authors', author 
-    /* #swagger.tags = ['Author'] 
-       #swagger.definitions['Author'] = {
-            firstName: 'J.R.R.',
-            lastName: 'Tolkien',
-            birthday: '1892-01-03'
-       }
-    */
-);
+router.use('/books', books /* #swagger.tags = ['Books'] */);
+router.use('/authors', author /* #swagger.tags = ['Author'] */);
 
 module.exports = router;

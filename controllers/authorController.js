@@ -44,7 +44,16 @@ const createAuthor = async (req, res) => {
 };
 
 const updateAuthor = async (req, res) => {
-    //#swagger.tags = ['Author']  
+    //#swagger.tags = ['Author']
+    /*  #swagger.parameters['obj'] = {
+            in: 'body',
+            description: 'Author information',
+            schema: {
+                firstName: 'J.R.R.',
+                lastName: 'Tolkien',
+                birthday: '1892-01-03'
+            }
+    } */ 
     try {
         const authorId = (req.params.id);
         const authorData = {

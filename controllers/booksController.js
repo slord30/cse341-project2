@@ -27,7 +27,20 @@ const getSingle = async (req, res) => {
 };
 
 const createBook = async (req, res) => {
-    //#swagger.tags = ['Books']  
+     //#swagger.tags = ['Books']
+    /*  #swagger.parameters['obj'] = {
+            in: 'body',
+            description: 'Book information',
+            schema: {
+                title: 'The Great Gatsby',
+                author: 'F. Scott Fitzgerald',
+                genre: 'Classic Fiction',
+                publicationYear: 1925,
+                isbn: '978-0743273565',
+                description: 'A story of wealth and love.',
+                isAvailable: true
+            }
+    } */
     try {
         const book = new Book({
             title: req.body.title,
