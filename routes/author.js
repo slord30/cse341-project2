@@ -13,6 +13,4 @@ router.put('/:id', authorValidationRules(), validate, authorController.updateAut
 
 router.delete('/:id', authorController.deleteAuthor);
 
-router.post('/', authorValidationRules(), validate);
-
 module.exports = router;

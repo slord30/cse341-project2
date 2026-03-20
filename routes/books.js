@@ -13,6 +13,4 @@ router.put('/:id', bookValidationRules(), validate, booksController.updateBook);
 
 router.delete('/:id', booksController.deleteBook);
 
-router.post('/', bookValidationRules(), validate);
-
 module.exports = router;
