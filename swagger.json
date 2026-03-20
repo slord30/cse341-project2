@@ -53,6 +53,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Books"
+        ],
         "description": "",
         "responses": {
           "412": {
@@ -193,6 +196,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Author"
+        ],
         "description": "",
         "responses": {
           "412": {
