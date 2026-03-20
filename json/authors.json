@@ -48,5 +48,12 @@
     "firstName": "Alex",
     "lastName": "Michaelides",
     "birthday": "1977-01-01"
+  },
+
+  {
+  "firstName": "Frank",
+  "lastName": "Herbert",
+  "birthday": "1920-10-08"
   }
+
 ]
