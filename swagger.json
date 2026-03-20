@@ -57,7 +57,53 @@
           "Books"
         ],
         "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "Book information",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "The Great Gatsby"
+                },
+                "author": {
+                  "type": "string",
+                  "example": "F. Scott Fitzgerald"
+                },
+                "genre": {
+                  "type": "string",
+                  "example": "Classic Fiction"
+                },
+                "publicationYear": {
+                  "type": "number",
+                  "example": 1925
+                },
+                "isbn": {
+                  "type": "string",
+                  "example": "978-0743273565"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "A story of wealth and love."
+                },
+                "isAvailable": {
+                  "type": "boolean",
+                  "example": true
+                }
+              }
+            }
+          }
+        ],
         "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
           "412": {
             "description": "Precondition Failed"
           }
@@ -200,7 +246,33 @@
           "Author"
         ],
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "birthday": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
           "412": {
             "description": "Precondition Failed"
           }
@@ -249,19 +321,23 @@
             "type": "string"
           },
           {
-            "name": "body",
+            "name": "obj",
             "in": "body",
+            "description": "Author information",
             "schema": {
               "type": "object",
               "properties": {
                 "firstName": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "J.R.R."
                 },
                 "lastName": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "Tolkien"
                 },
                 "birthday": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "1892-01-03"
                 }
               }
             }
