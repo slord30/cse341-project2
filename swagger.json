@@ -24,64 +24,12 @@
     "/": {
       "get": {
         "tags": [
-          "Author"
+          "Hello World"
         ],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Author"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "obj",
-            "in": "body",
-            "description": "Author information",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "firstName": {
-                  "type": "string",
-                  "example": "J.R.R."
-                },
-                "lastName": {
-                  "type": "string",
-                  "example": "Tolkien"
-                },
-                "birthday": {
-                  "type": "string",
-                  "example": "1892-01-03"
-                }
-              },
-              "required": [
-                "firstName",
-                "lastName",
-                "birthday"
-              ]
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "412": {
-            "description": "Precondition Failed"
           }
         }
       }
@@ -115,37 +63,7 @@
             "in": "body",
             "description": "Book information",
             "schema": {
-              "type": "object",
-              "properties": {
-                "title": {
-                  "type": "string",
-                  "example": "The Great Gatsby"
-                },
-                "author": {
-                  "type": "string",
-                  "example": "F. Scott Fitzgerald"
-                },
-                "genre": {
-                  "type": "string",
-                  "example": "Classic Fiction"
-                },
-                "publicationYear": {
-                  "type": "number",
-                  "example": 1925
-                },
-                "isbn": {
-                  "type": "string",
-                  "example": "978-0743273565"
-                },
-                "description": {
-                  "type": "string",
-                  "example": "A story of wealth and love."
-                },
-                "isAvailable": {
-                  "type": "boolean",
-                  "example": true
-                }
-              }
+              "$ref": "#/definitions/Book"
             }
           }
         ],
@@ -282,26 +200,7 @@
             "in": "body",
             "description": "Author information",
             "schema": {
-              "type": "object",
-              "properties": {
-                "firstName": {
-                  "type": "string",
-                  "example": "J.R.R."
-                },
-                "lastName": {
-                  "type": "string",
-                  "example": "Tolkien"
-                },
-                "birthday": {
-                  "type": "string",
-                  "example": "1892-01-03"
-                }
-              },
-              "required": [
-                "firstName",
-                "lastName",
-                "birthday"
-              ]
+              "$ref": "#/definitions/Author"
             }
           }
         ],
@@ -319,97 +218,6 @@
       }
     },
     "/authors/{id}": {
-      "get": {
-        "tags": [
-          "Author"
-        ],
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Author"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "obj",
-            "in": "body",
-            "description": "Author information",
-            "schema": {
-              "$ref": "#/definitions/Author"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "412": {
-            "description": "Precondition Failed"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Author"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/{id}": {
       "get": {
         "tags": [
           "Author"

@@ -31,15 +31,7 @@ const createBook = async (req, res) => {
     /*  #swagger.parameters['obj'] = {
             in: 'body',
             description: 'Book information',
-            schema: {
-                title: 'The Great Gatsby',
-                author: 'F. Scott Fitzgerald',
-                genre: 'Classic Fiction',
-                publicationYear: 1925,
-                isbn: '978-0743273565',
-                description: 'A story of wealth and love.',
-                isAvailable: true
-            }
+            schema: { $ref: '#/definitions/Book' } 
     } */
     try {
         const book = new Book({
@@ -64,7 +56,7 @@ const updateBook = async (req, res) => {
     /*  #swagger.parameters['obj'] = {
             in: 'body',
             description: 'Book information',
-            schema: { $ref: '#/definitions/Book' }
+            schema: { $ref: '#/definitions/Book' } 
     } */ 
     try {
         const bookId = (req.params.id);

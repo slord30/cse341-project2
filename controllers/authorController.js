@@ -32,11 +32,7 @@ const createAuthor = async (req, res) => {
     /*  #swagger.parameters['obj'] = {
             in: 'body',
             description: 'Author information',
-            schema: {
-                $firstName: 'J.R.R.',
-                $lastName: 'Tolkien',
-                $birthday: '1892-01-03'
-            }
+            schema: { $ref: '#/definitions/Author' }
     } */ 
     try {
         const author = new Author({
