@@ -7,6 +7,13 @@ const doc = {
     },
     host: 'cse341-project2-e3w4.onrender.com',
     schemes: ['https'],
+    securityDefinitions: {
+      GitHubOAuth: {
+        type: 'oauth2',
+        authorizationUrl: 'https://github.com',
+        flow: 'implicit'
+      }
+    },
     definitions: {
     Book: {
       title: "The Hobbit",
