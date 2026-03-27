@@ -12,6 +12,16 @@ const bookValidationRules = () => {
     ];
 };
 
+const isAuthenticated = (req, res, next) => {
+    // console.log("Checking authentication...");
+    // console.log("Session User:", req.session.user);
+    // console.log("Is Authenticated:", req.isAuthenticated());
+    if(req.session.user === undefined){
+        return res.status(401).json("You don't have access.");
+    }
+    next();
+}
+
 const authorValidationRules = () => {
     return [
         body("firstName").notEmpty().withMessage("First name is required.").trim().escape(),
@@ -28,4 +38,4 @@ const validate = (req, res, next) => {
     return res.status(412).json({errors: errors.array()});
 };
 
-module.exports = {bookValidationRules, authorValidationRules, validate};
+module.exports = {bookValidationRules, authorValidationRules, validate, isAuthenticated};
