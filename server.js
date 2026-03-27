@@ -16,6 +16,8 @@ connectDB().catch(err => {
     console.log("Failed to start server: ", err);
 });
 
+app.set('trust proxy', 1);
+
 // Sessions first
 app.use(express.json());
 app.use(session({
