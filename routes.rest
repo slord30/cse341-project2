@@ -28,7 +28,7 @@ Content-Type: application/json
     "title": "The Great Gatsby",
     "author": "F. Scott Fitzgerald",
     "genre": "Classic Fiction",
-    "publicationYear": 1935,
+    "publicationYear": 1925,
     "isbn": "978-0743273565",
     "description": "A story of wealth, love, and the American Dream in the 1920s.",
     "isAvailable": true
