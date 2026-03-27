@@ -7,10 +7,25 @@ const {isAuthenticated, authorValidationRules, validate} = require('../middlewar
 router.get('/', authorController.getAllData);
 router.get('/:id', authorController.getSingle);
 
-router.post('/', isAuthenticated, authorValidationRules(), validate, authorController.createAuthor);
+router.post('/', isAuthenticated, authorValidationRules(), validate, (req, res) => {
+    /* #swagger.security = [{
+            "GitHubOAuth": []
+    }] */
+    authorController.createAuthor(req, res);
+});
 
-router.put('/:id', isAuthenticated, authorValidationRules(), validate, authorController.updateAuthor);
+router.put('/:id', isAuthenticated, authorValidationRules(), validate, (req, res) => {
+    /* #swagger.security = [{
+            "GitHubOAuth": []
+    }] */
+    authorController.updateAuthor(req, res);
+});
 
-router.delete('/:id', isAuthenticated, authorController.deleteAuthor);
+router.delete('/:id', isAuthenticated, (req, res) => {
+    /* #swagger.security = [{
+            "GitHubOAuth": []
+    }] */
+    authorController.deleteAuthor(req, res);
+});
 
 module.exports = router;
