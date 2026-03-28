@@ -10,8 +10,8 @@ const doc = {
     securityDefinitions: {
       GitHubOAuth: {
         type: 'oauth2',
-        authorizationUrl: 'https://github.com',
-        tokenUrl: 'https://github.com',
+        authorizationUrl: 'https://github.com/login/oauth/authorize',
+        tokenUrl: 'https://github.com/login/oauth/authorize',
         flow: 'accessCode'
         }
       },
