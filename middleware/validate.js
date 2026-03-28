@@ -13,14 +13,11 @@ const bookValidationRules = () => {
 };
 
 const isAuthenticated = (req, res, next) => {
-    console.log("Checking authentication...");
-    console.log("Session User:", req.session.user);
-    console.log("Is Authenticated:", req.isAuthenticated());
-    if(req.session.user === undefined){
-        return res.status(401).json("You don't have access.");
+    if(req.isAuthenticated()) {
+        return next();
     }
-    next();
-}
+    return res.status(401).json("You don't have access.");
+};
 
 const authorValidationRules = () => {
     return [
@@ -29,7 +26,7 @@ const authorValidationRules = () => {
         body("birthday").optional().isISO8601().withMessage("Birthday must be a valid date (YYYY-MM-DD).")
 
     ]
-}
+};
 
 const validate = (req, res, next) => {
     const errors = validationResult(req);

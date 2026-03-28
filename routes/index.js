@@ -10,8 +10,8 @@ router.use('/api-docs', swaggerUi.serve);
 router.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
 router.get('/', (req, res) => {
-    //#swagger.tags = ['Hello World']
-    res.send("Hello World! Welcome to the Library API.")
+    //#swagger.tags = ['Status']
+    res.send(req.isAuthenticated() ? `Logged in as ${req.user.displayName}` : "Logged out")
 });
 
 router.use('/books', books /* #swagger.tags = ['Books'] */);
@@ -19,8 +19,15 @@ router.use('/authors', author /* #swagger.tags = ['Author'] */);
 
 //login and logout routes
 router.get('/login', passport.authenticate('github'), (req, res) => {});
-router.get('/logout', function(req, res, next) {
-    req.logout(function(err) {    
+
+router.get('/github/callback',
+    passport.authenticate('github', {failureRedirect: '/api-docs'}),
+    (req, res) => {
+        res.redirect('/');
+    });
+
+router.get('/logout', (req, res, next) => {
+    req.logout((err) => {    
         if (err) {return next(err);}
         res.redirect('/');
     });

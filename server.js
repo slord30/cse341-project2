@@ -29,14 +29,12 @@ app.use(bodyParser.json());
 // --- SESSIONS ---
 //session configuration (must be before passport)
 app.use(session({
-    secret: "secret",
+    secret: process.env.SESSION_SECRET || 'secret',
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
     cookie: {
         secure: true,
-        sameSite: 'none',
-        httpOnly: true,
-        maxAge: 24 * 60 * 60 * 1000
+        sameSite: 'none'
     }
 }));
 
@@ -45,15 +43,15 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 //CORS headers
-app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader(
-        'Access-Control-Allow-Headers',
-        'Origin, X-Requested-With, Content-Type, Accept, Z-Key, Authorization'
-    );
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    next();
-});
+// app.use((req, res, next) => {
+//     res.setHeader("Access-Control-Allow-Origin", process.env.BASE);
+//     res.setHeader(
+//         'Access-Control-Allow-Headers',
+//         'Origin, X-Requested-With, Content-Type, Accept, Z-Key, Authorization'
+//     );
+//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+//     next();
+// });
 
 // --- PASSPORT STRATEGY ---
 
@@ -77,24 +75,20 @@ passport.deserializeUser((user, done) => {
 
 // --- OAUTH ENDPOINTS ---
 
-app.get('/', (req, res) => {
-    res.send(req.session.user !== undefined ? `Logged in as ${req.session.user.displayName}`: "Logged Out");
-});
+// app.get('/', (req, res) => {
+//     res.send(req.user !== undefined ? `Logged in as ${req.user.displayName}`: "Logged Out");
+// });
 
-app.get('/github/callback', passport.authenticate('github', {
-    failureRedirect: '/api-docs', 
-    session: true}),
-    (req, res) => {
-    req.session.user = req.user;
-    req.session.save(() => {
-        res.redirect('/');
-    });
-
-});
-
+// app.get('/github/callback', 
+//     passport.authenticate('github', {
+//         failureRedirect: '/api-docs'
+//     }),
+//     (req, res) => {
+//         res.redirect('/');
+//     }
+// );
 
 // --- ROUTES ---
-
 //main router (must be after passport/session)
 app.use('/', indexRoutes);
 

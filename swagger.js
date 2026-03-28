@@ -11,9 +11,10 @@ const doc = {
       GitHubOAuth: {
         type: 'oauth2',
         authorizationUrl: 'https://github.com',
-        flow: 'implicit'
-      }
-    },
+        tokenUrl: 'https://github.com',
+        flow: 'accessCode'
+        }
+      },
     definitions: {
     Book: {
       title: "The Hobbit",

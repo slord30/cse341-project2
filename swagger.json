@@ -14,7 +14,8 @@
     "GitHubOAuth": {
       "type": "oauth2",
       "authorizationUrl": "https://github.com",
-      "flow": "implicit"
+      "tokenUrl": "https://github.com",
+      "flow": "accessCode"
     }
   },
   "paths": {
@@ -31,7 +32,7 @@
     "/": {
       "get": {
         "tags": [
-          "Hello World"
+          "Status"
         ],
         "description": "",
         "responses": {
@@ -42,6 +43,16 @@
       }
     },
     "/login": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/github/callback": {
       "get": {
         "description": "",
         "responses": {
@@ -107,7 +118,12 @@
           "412": {
             "description": "Precondition Failed"
           }
-        }
+        },
+        "security": [
+          {
+            "GitHubOAuth": []
+          }
+        ]
       }
     },
     "/books/{id}": {
@@ -176,7 +192,14 @@
           "412": {
             "description": "Precondition Failed"
           }
-        }
+        },
+        "security": [
+          {
+            "GitHubOAuth": [
+              "read:user"
+            ]
+          }
+        ]
       },
       "delete": {
         "tags": [
@@ -204,7 +227,12 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "GitHubOAuth": []
+          }
+        ]
       }
     },
     "/authors/": {
@@ -253,7 +281,12 @@
           "412": {
             "description": "Precondition Failed"
           }
-        }
+        },
+        "security": [
+          {
+            "GitHubOAuth": []
+          }
+        ]
       }
     },
     "/authors/{id}": {
@@ -322,7 +355,12 @@
           "412": {
             "description": "Precondition Failed"
           }
-        }
+        },
+        "security": [
+          {
+            "GitHubOAuth": []
+          }
+        ]
       },
       "delete": {
         "tags": [
@@ -350,7 +388,12 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "GitHubOAuth": []
+          }
+        ]
       }
     }
   },
