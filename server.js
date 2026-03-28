@@ -8,7 +8,7 @@ const passport = require('passport');
 const session = require('express-session');
 // const { deleteOne } = require('./models/author');
 const GitHubStrategy = require('passport-github2').Strategy;
-const MongoStore = require('connect-mongo');
+const MongoStore = require('connect-mongo').default;
 
 
 
