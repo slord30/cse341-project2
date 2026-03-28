@@ -26,6 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// --- SESSIONS ---
 //session configuration (must be before passport)
 app.use(session({
     secret: "secret",
@@ -34,9 +35,10 @@ app.use(session({
     cookie: {
         secure: true,
         sameSite: 'none',
-        httpOnly: true
+        httpOnly: true,
+        maxAge: 24 * 60 * 60 * 1000
     }
-}))
+}));
 
 //passport inititialization
 app.use(passport.initialize())
