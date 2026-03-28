@@ -21,7 +21,10 @@ router.use('/authors', author /* #swagger.tags = ['Author'] */);
 router.get('/login', passport.authenticate('github'), (req, res) => {});
 
 router.get('/github/callback',
-    passport.authenticate('github', {failureRedirect: '/api-docs'}),
+    passport.authenticate('github', {
+        failureRedirect: '/api-docs',
+        session: true
+    }),
     (req, res) => {
         res.redirect('/');
     });
