@@ -11,6 +11,7 @@ const GitHubStrategy = require('passport-github2').Strategy;
 const MongoStore = require('connect-mongo');
 
 
+
 const port = process.env.PORT || 3000;
 
 //connect to database
@@ -33,9 +34,8 @@ app.use(session({
     secret: process.env.SESSION_SECRET || 'secret',
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({
-        mongoUrl: process.env.MONGODB_URI,
-        collectionName: 'sessions'
+    store: MongoStore.create({ 
+        mongoUrl: process.env.MONGODB_URI 
     }),
     cookie: {
         secure: true,
@@ -43,6 +43,7 @@ app.use(session({
         httpOnly: true
     }
 }));
+
 
 //passport inititialization
 app.use(passport.initialize())
