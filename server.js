@@ -8,6 +8,7 @@ const passport = require('passport');
 const session = require('express-session');
 // const { deleteOne } = require('./models/author');
 const GitHubStrategy = require('passport-github2').Strategy;
+const MongoStore = require('connect-mongo');
 
 
 const port = process.env.PORT || 3000;
@@ -31,7 +32,11 @@ app.use(bodyParser.json());
 app.use(session({
     secret: process.env.SESSION_SECRET || 'secret',
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
+    store: MongoStore.create({
+        mongoUrl: process.env.MONGODB_URI,
+        collectionName: 'sessions'
+    }),
     cookie: {
         secure: true,
         sameSite: 'none',
